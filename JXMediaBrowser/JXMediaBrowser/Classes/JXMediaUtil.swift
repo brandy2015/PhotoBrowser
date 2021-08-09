@@ -18,10 +18,10 @@ public struct JXMediaUtil {
     /// 允许打印的最高日志级别。
     /// 本级别以下的日志都会被允许打印。
     /// 级别排序：normal > warning > error
-    public static var allowLogLevel: LogLevel = .warning
+    public static var logLevel: LogLevel = .warning
     
     public static func log(level: LogLevel = .normal, message: @autoclosure () -> Any) {
-        if level.rawValue <= self.allowLogLevel.rawValue {
+        if level.rawValue <= self.logLevel.rawValue {
             var name: String = ""
             switch level {
             case .error:

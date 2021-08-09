@@ -37,16 +37,21 @@ class ListViewController: UIViewController {
     
     private func setupListView() {
         self.listView.padding = UIEdgeInsetsMake(100, 20, 30, 20)
+        self.listView.scrollDirection = .horizontal
         self.listView.itemSpacing = 60
-//        self.listView.register(JXImageCell.self, forCellWithReuseIdentifier: self.reuseCellId)
         
         self.listView.numberOfItems = {
             return self.modelArray.count
         }
         
         self.listView.cellForItemAtIndex = { listView, index in
-//            let cell = listView.dequeueReusableCell(withReuseIdentifier: self.reuseCellId, for: index)
             let cell = listView.dequeueReusableCell(withClass: JXImageCell.self, for: index)
+            let model = self.modelArray[index]
+            var image: UIImage?
+            if let imageName = model.localName {
+                image = UIImage(named: imageName)
+            }
+            cell.reload(with: image)
             return cell
         }
     }

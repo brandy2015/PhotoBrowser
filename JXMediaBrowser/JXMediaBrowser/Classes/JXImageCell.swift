@@ -31,7 +31,7 @@ open class JXImageCell: UICollectionViewCell {
         self.contentView.layer.borderColor = UIColor.black.cgColor
     }
     
-    open func reload(with image: UIImage) {
+    open func reload(with image: UIImage?) {
         self.imageView.image = image
     }
     

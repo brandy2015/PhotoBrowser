@@ -29,7 +29,7 @@ class HomeViewController: UITableViewController {
     }
     
     private func setup() {
-        JXMediaUtil.allowLogLevel = .normal
+        JXMediaUtil.logLevel = .normal
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
